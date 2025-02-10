@@ -1,0 +1,10 @@
+<!-- picks/templates/picks/landing.html -->
+{% extends "base.html" %}
+{% block content %}
+  <h1>Welcome to the Football Picks App</h1>
+  <p>Please choose one of the following options:</p>
+  <ul>
+    <li><a href="{% url 'picks:register' %}">Register</a></li>
+    <li><a href="{% url 'login' %}">Login</a></li>
+  </ul>
+{% endblock %}

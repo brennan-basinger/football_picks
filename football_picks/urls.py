@@ -21,10 +21,13 @@ from django.urls import path
 from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth import views as auth_views
+from picks import views as picks_views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', picks_views.landing, name='landing'),
     path('picks/', include('picks.urls')),
     path('login/', auth_views.LoginView.as_view(template_name='picks/login.html'), name='login'),
-    path('logout/', auth_views.LogoutView.as_view(next_page='picks:home'), name='logout'),
+    path('logout/', auth_views.LogoutView.as_view(next_page='landing'), name='logout'),
 ]

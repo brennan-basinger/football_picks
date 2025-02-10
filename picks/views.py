@@ -6,6 +6,9 @@ from .forms import CustomUserCreationForm
 from .models import Game, Pick, User
 
 
+def landing(request):
+    return render(request, 'picks/landing.html')
+
 def register(request):
     if request.method == 'POST':
         form = CustomUserCreationForm(request.POST)
