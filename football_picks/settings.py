@@ -27,7 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -37,7 +36,12 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "picks",
 ]
+
+AUTH_USER_MODEL = 'picks.User'
+
+LOGIN_URL = '/login/'
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",

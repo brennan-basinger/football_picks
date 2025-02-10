@@ -1,0 +1,17 @@
+<!-- picks/templates/picks/view_picks.html -->
+{% extends "base.html" %}
+{% block content %}
+  <h2>{{ other_user.first_name }}'s Picks</h2>
+  <table border="1">
+    <tr>
+      <th>Game</th>
+      <th>Pick</th>
+    </tr>
+    {% for pick in picks %}
+      <tr>
+        <td>{{ pick.game }}</td>
+        <td>{{ pick.get_pick_display }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+{% endblock %}

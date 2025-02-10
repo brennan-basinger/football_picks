@@ -1,0 +1,40 @@
+<!-- picks/templates/picks/home.html -->
+{% extends "base.html" %}
+{% load picks_extras %}
+{% block content %}
+  <h2>Game Picks</h2>
+  <form method="post">
+    {% csrf_token %}
+    <table border="1">
+      <tr>
+        <th>Team / Week</th>
+        {% for week in weeks %}
+          <th>{{ week }}</th>
+        {% endfor %}
+      </tr>
+      {% for team, games in schedule.items %}
+        <tr>
+          <td>{{ team }}</td>
+          {% for week in weeks %}
+            <td>
+              {% if games|get_item:week %}
+                {% with game=games|get_item:week %}
+                  <select name="game_{{ game.id }}">
+                    <option value="">--</option>
+                    <option value="W" {% if user_picks|get_item:game.id == "W" %}selected{% endif %}>W</option>
+                    <option value="L" {% if user_picks|get_item:game.id == "L" %}selected{% endif %}>L</option>
+                  </select>
+                  <br/>
+                  vs {{ game.opponent }}
+                {% endwith %}
+              {% else %}
+                N/A
+              {% endif %}
+            </td>
+          {% endfor %}
+        </tr>
+      {% endfor %}
+    </table>
+    <button type="submit">Submit Picks</button>
+  </form>
+{% endblock %}

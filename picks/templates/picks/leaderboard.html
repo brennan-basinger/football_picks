@@ -1,0 +1,21 @@
+<!-- picks/templates/picks/leaderboard.html -->
+{% extends "base.html" %}
+{% block content %}
+  <h2>Leaderboard</h2>
+  <table border="1">
+    <tr>
+      <th>User</th>
+      <th>Correct Picks</th>
+    </tr>
+    {% for entry in leaderboard %}
+      <tr>
+        <td>
+          <a href="{% url 'picks:view_picks' entry.user.id %}">
+            {{ entry.user.first_name }} {{ entry.user.last_name }}
+          </a>
+        </td>
+        <td>{{ entry.correct }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+{% endblock %}
