@@ -49,14 +49,57 @@ class User(AbstractUser):
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 class Game(models.Model):
     team = models.CharField(max_length=50)
     # Renamed from "date" to "week" to better reflect the schedule.
     week = models.CharField(max_length=20)  # e.g., "Week 1", "Week 2", etc.
     opponent = models.CharField(max_length=50)
 
+    # New field to store the actual result. Leave blank if the game hasn't been played yet.
+    RESULT_CHOICES = (
+        ('W', 'Win'),
+        ('L', 'Loss'),
+    )
+    result = models.CharField(
+        max_length=1,
+        choices=RESULT_CHOICES,
+        null=True,
+        blank=True,
+        help_text="Enter 'W' if the team won or 'L' if the team lost."
+    )
+
+
+
     def __str__(self):
         return f"{self.team} vs {self.opponent} in {self.week}"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

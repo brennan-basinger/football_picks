@@ -8,9 +8,11 @@ class UserAdmin(admin.ModelAdmin):
 
 @admin.register(Game)
 class GameAdmin(admin.ModelAdmin):
-    list_display = ('team', 'week', 'opponent')
+    list_display = ('team', 'week', 'opponent', 'result')
+    list_filter = ('week', 'result')
 
 @admin.register(Pick)
 class PickAdmin(admin.ModelAdmin):
     list_display = ('user', 'game', 'pick')
     list_filter = ('pick', 'game__week', 'user')
+
