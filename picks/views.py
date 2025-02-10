@@ -31,6 +31,8 @@ def home(request):
         schedule.setdefault(game.team, {})[game.week] = game
     weeks = sorted(list(weeks))
 
+    weeks = sorted(list(weeks), key=lambda week: int(week.split()[1]))
+
     if request.method == 'POST':
         for team, games_by_week in schedule.items():
             for week, game in games_by_week.items():
