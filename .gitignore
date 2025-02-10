@@ -1,0 +1,85 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+ENV/
+*.env
+*.venv
+
+# Django-specific files
+*.log
+db.sqlite3
+db.sqlite3-journal
+media/
+staticfiles/
+
+# If you are using PostgreSQL, MySQL, or another DB, exclude the local database dumps
+*.sqlite3
+*.sqlite3-journal
+*.pgdata
+*.db
+
+# Migrations (optional: you might want to commit initial migrations)
+**/migrations/*.py
+**/migrations/*.pyc
+!**/migrations/__init__.py
+
+# Ignore .env files containing secrets
+.env
+.env.local
+.env.production
+.env.testing
+
+# Editor-specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Ignore Jupyter Notebook checkpoints (if using Jupyter)
+.ipynb_checkpoints/
+
+# Ignore compiled, cache, and coverage reports
+*.coverage
+.coverage
+.cache/
+nosetests.xml
+coverage.xml
+*.cover
+*.pycover
+*.hypothesis/
+*.pytest_cache/
+*.tox/
+.tox/
+
+# Ignore Django collectstatic output
+/static/
+static/
+staticfiles/
+
+# Ignore compiled code
+*.so
+
+# Ignore pipenv files (if using pipenv)
+Pipfile
+Pipfile.lock
+
+# Ignore Docker-related files (if using Docker)
+docker-compose.override.yml
+.dockerignore
+
+# Ignore Node modules (if using frontend build tools)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Ignore Celery beat schedule file (if using Celery)
+celerybeat-schedule
+
+# Ignore deployment files (if using AWS, Heroku, etc.)
+*.pem
+*.key
