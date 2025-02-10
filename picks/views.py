@@ -58,11 +58,15 @@ def leaderboard(request):
     users = User.objects.all()
     leaderboard_data = []
     for user in users:
-        correct_picks = Pick.objects.filter(user=user, pick='W').count()  # placeholder logic
-        leaderboard_data.append({'user': user, 'correct': correct_picks})
+        correct_picks_count = 0
+        picks = Pick.objects.filter(user=user)
+        for pick in picks:
+            # Only count if the game result has been entered.
+            if pick.game.result and pick.pick == pick.game.result:
+                correct_picks_count += 1
+        leaderboard_data.append({'user': user, 'correct': correct_picks_count})
     leaderboard_data.sort(key=lambda x: x['correct'], reverse=True)
     return render(request, 'picks/leaderboard.html', {'leaderboard': leaderboard_data})
-
 
 @login_required
 def view_picks(request, user_id):
