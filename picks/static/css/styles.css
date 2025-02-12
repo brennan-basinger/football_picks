@@ -9,3 +9,119 @@
     padding: 0.25rem 0.4rem;
   }
 }
+
+/* Background Image for the Entire Website */
+body {
+  background: url('/static/images/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  /* Existing body styles */
+  background-color: #f8f9fa;  /* Optional: a fallback color */
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color: #343a40;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* Base Body and Typography */
+body {
+  background-color: #f8f9fa;  /* Light gray background for a clean look */
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color: #343a40;  /* Dark gray text for good contrast */
+  margin: 0;
+  padding: 0;
+}
+
+/* Navigation Bar Enhancements */
+.navbar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  /* Subtle shadow for depth */
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Main Content Container */
+.container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: #343a40;
+  margin-bottom: 1rem;
+}
+
+/* Table Styling */
+.table-responsive table {
+  font-size: 0.73rem;  /* Slightly smaller text to fit more columns */
+}
+
+.table th,
+.table td {
+  text-align: center;
+  vertical-align: middle;
+  padding: 0.5rem;  /* Reduced padding for a denser layout */
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #e9ecef;  /* Light striping for rows */
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: #0069d9;
+  border-color: #0062cc;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: #0053ba;
+  border-color: #004aaf;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+  border-color: #545b62;
+}
+
+/* Footer (Optional) */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background-color: #343a40;
+  color: #fff;
+  margin-top: 40px;
+}
+
+/* Adjust the font size of the select element and its options */
+select.form-select {
+  font-size: 0.7rem;  /* Adjust this value as needed */
+  /* Optionally, you can also tweak line-height or padding if you want the dropdown smaller overall */
+  line-height: 1.2;
+  padding: 0.25rem 0.5rem;
+}
+
+/* In some browsers, you might also need to target option elements directly */
+select.form-select option {
+  font-size: 0.7rem;
+}
+
+
+
+
+
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+  .table-responsive {
+    font-size: 0.8rem;  /* Further reduce font size on smaller screens */
+  }
+}
