@@ -1,17 +1,25 @@
 <!-- picks/templates/picks/view_picks.html -->
 {% extends "base.html" %}
 {% block content %}
-  <h2>{{ other_user.first_name }}'s Picks</h2>
-  <table border="1">
-    <tr>
-      <th>Game</th>
-      <th>Pick</th>
-    </tr>
-    {% for pick in picks %}
-      <tr>
-        <td>{{ pick.game }}</td>
-        <td>{{ pick.get_pick_display }}</td>
-      </tr>
-    {% endfor %}
-  </table>
+  <div class="container my-4">
+    <h2 class="mb-4">{{ other_user.first_name }}'s Picks</h2>
+    <div class="table-responsive">
+      <table class="table table-striped table-bordered">
+        <thead class="table-light">
+          <tr>
+            <th>Game</th>
+            <th>Pick</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for pick in picks %}
+            <tr>
+              <td>{{ pick.game }}</td>
+              <td>{{ pick.get_pick_display }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
 {% endblock %}

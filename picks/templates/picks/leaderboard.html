@@ -1,21 +1,29 @@
 <!-- picks/templates/picks/leaderboard.html -->
 {% extends "base.html" %}
 {% block content %}
-  <h2>Leaderboard</h2>
-  <table border="1">
-    <tr>
-      <th>User</th>
-      <th>Correct Picks</th>
-    </tr>
-    {% for entry in leaderboard %}
-      <tr>
-        <td>
-          <a href="{% url 'picks:view_picks' entry.user.id %}">
-            {{ entry.user.first_name }} {{ entry.user.last_name }}
-          </a>
-        </td>
-        <td>{{ entry.correct }}</td>
-      </tr>
-    {% endfor %}
-  </table>
+  <div class="container my-4">
+    <h2 class="mb-4">Leaderboard</h2>
+    <div class="table-responsive">
+      <table class="table table-hover table-bordered">
+        <thead class="table-light">
+          <tr>
+            <th>User</th>
+            <th>Correct Picks</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for entry in leaderboard %}
+            <tr>
+              <td>
+                <a href="{% url 'picks:view_picks' entry.user.id %}">
+                  {{ entry.user.first_name }} {{ entry.user.last_name }}
+                </a>
+              </td>
+              <td>{{ entry.correct }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
 {% endblock %}

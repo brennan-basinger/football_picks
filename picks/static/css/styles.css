@@ -1,0 +1,11 @@
+/* static/css/styles.css */
+@media (min-width: 1200px) {
+  /* For larger screens, make the table more compact */
+  .table-responsive table {
+    font-size: 0.70rem;
+  }
+  .table-responsive th,
+  .table-responsive td {
+    padding: 0.25rem 0.4rem;
+  }
+}
