@@ -23,14 +23,6 @@ body {
 }
 
 
-/* Base Body and Typography */
-body {
-  background-color: #f8f9fa;  /* Light gray background for a clean look */
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  color: #343a40;  /* Dark gray text for good contrast */
-  margin: 0;
-  padding: 0;
-}
 
 /* Navigation Bar Enhancements */
 .navbar {
