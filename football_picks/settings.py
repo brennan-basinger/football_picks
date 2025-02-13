@@ -75,6 +75,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "football_picks.wsgi.application"
 
+#I can use the console email backend so that emails are printed to the terminal instead of actually being sent
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+#In production, I need to configure an SMTP backend with email provider’s settings.
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
