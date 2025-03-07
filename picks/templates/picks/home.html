@@ -23,7 +23,7 @@
                 <td>
                   {% if games|get_item:week %}
                     {% with game=games|get_item:week %}
-                      <div class="mb-2 text-center">vs {{ game.opponent }}</div>
+                      <div class="mb-2 text-center">{% game_marker team week %} {{ game.opponent }}</div>
                       <select name="game_{{ game.id }}" class="form-select">
                         <option value="">--</option>
                         <option value="W" {% if user_picks|get_item:game.id == "W" %}selected{% endif %}>W</option>
