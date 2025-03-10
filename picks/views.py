@@ -4,6 +4,11 @@ from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
 from .forms import CustomUserCreationForm
 from .models import Game, Pick, User
+from django.shortcuts import render
+
+
+def schedule_view(request):
+    return render(request, 'picks/schedule.html')
 
 
 def landing(request):
@@ -76,3 +81,6 @@ def view_picks(request, user_id):
     other_user = get_object_or_404(User, id=user_id)
     picks = Pick.objects.filter(user=other_user)
     return render(request, 'picks/view_picks.html', {'other_user': other_user, 'picks': picks})
+
+
+

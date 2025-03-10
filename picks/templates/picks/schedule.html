@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<!-- Inline styles specific to the schedule page -->
+<style>
+  .pdf-container {
+    height: 90vh; /* 90% of the viewport height */
+    margin-bottom: 20px;
+  }
+  .pdf-container embed,
+  .pdf-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+</style>
+
+<h1 class="text-center my-4">2025 SEC Football Schedule</h1>
+<div class="container">
+  <div class="pdf-container">
+    <embed src="{% static 'pdfs/2025_SEC_Football_Grid_Schedule.pdf' %}" type="application/pdf">
+    <!-- Alternatively, you can use an iframe:
+    <iframe src="{% static 'pdfs/2025_SEC_Football_Grid_Schedule.pdf' %}" frameborder="0"></iframe>
+    -->
+  </div>
+  <p class="text-center mt-3">
+    <a href="{% static 'pdfs/2025_SEC_Football_Grid_Schedule.pdf' %}" download class="btn btn-primary">
+      Download Schedule PDF
+    </a>
+  </p>
+</div>
+{% endblock %}
