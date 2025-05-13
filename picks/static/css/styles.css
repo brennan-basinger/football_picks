@@ -12,7 +12,7 @@
 
 /* Background Image for the Entire Website */
 body {
-  background: url('/static/images/background.jpg') no-repeat center center fixed;
+  background: url('../images/backgroundImage.jpg') no-repeat center center fixed;
   background-size: cover;
   /* Existing body styles */
   background-color: #f8f9fa;  /* Optional: a fallback color */
