@@ -1,6 +1,8 @@
 <!-- picks/templates/picks/home.html -->
 {% extends "base.html" %}
+{% load static %}
 {% load picks_extras %}
+
 {% block content %}
   <h2 class="mb-4">Game Picks</h2>
   <form method="post">
@@ -18,7 +20,11 @@
         <tbody>
           {% for team, games in schedule.items %}
             <tr>
-              <td>{{ team }}</td>
+
+                <td class="text-center align-middle">
+        <img src="{% static 'images/logos/' %}{{ team|slugify }}.png" alt="{{ team }} logo" class="team-logo">
+            </td>
+
               {% for week in weeks %}
                 <td>
                   {% if games|get_item:week %}
