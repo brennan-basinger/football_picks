@@ -12,6 +12,9 @@ urlpatterns = [
     path('leaderboard/', views.leaderboard, name='leaderboard'),
     path('view_picks/<int:user_id>/', views.view_picks, name='view_picks'),
     path('about/', about, name='about'),
+    path('terms/', views.terms_view, name='terms'),
+
+
 
 ]
 
