@@ -28,6 +28,8 @@ share/python-wheels/
 
 .DS_Store
 
+users_to_import.csv
+
 # PyInstaller
 *.manifest
 *.spec
