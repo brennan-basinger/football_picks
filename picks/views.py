@@ -1,11 +1,13 @@
 # picks/views.py
+from django.http import HttpResponseForbidden
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
 from .forms import CustomUserCreationForm
 from .models import Game, Pick, User
 from django.shortcuts import render
-
+from django.utils import timezone
+from django.conf import settings
 
 def schedule_view(request):
     return render(request, 'picks/schedule.html')
@@ -76,11 +78,26 @@ def leaderboard(request):
     leaderboard_data.sort(key=lambda x: x['correct'], reverse=True)
     return render(request, 'picks/leaderboard.html', {'leaderboard': leaderboard_data})
 
+
+
+
+
 @login_required
 def view_picks(request, user_id):
     other_user = get_object_or_404(User, id=user_id)
-    picks = Pick.objects.filter(user=other_user)
-    return render(request, 'picks/view_picks.html', {'other_user': other_user, 'picks': picks})
+    # Deny access to others’ picks until the contest starts
+
+    if request.user.id != other_user.id and timezone.now() < settings.CONTEST_START:
+        return HttpResponseForbidden("Picks remain private until the contest begins.")
+        picks = Pick.objects.filter(user=other_user)
+        return render(request, 'picks/view_picks.html', {
+            'other_user': other_user,
+            'picks': picks
+        })
+
+
+
+
 
 
 

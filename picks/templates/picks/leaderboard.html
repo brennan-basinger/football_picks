@@ -1,4 +1,3 @@
-<!-- picks/templates/picks/leaderboard.html -->
 {% extends "base.html" %}
 {% block content %}
   <div class="container my-4">
@@ -15,9 +14,18 @@
           {% for entry in leaderboard %}
             <tr>
               <td>
-                <a href="{% url 'picks:view_picks' entry.user.id %}">
+                {% comment %}
+                  Only show the link if:
+                  1) it's the current user's own row, or
+                  2) the contest has started
+                {% endcomment %}
+                {% if request.user.id == entry.user.id or contest_started %}
+                  <a href="{% url 'picks:view_picks' entry.user.id %}">
+                    {{ entry.user.first_name }} {{ entry.user.last_name }}
+                  </a>
+                {% else %}
                   {{ entry.user.first_name }} {{ entry.user.last_name }}
-                </a>
+                {% endif %}
               </td>
               <td>{{ entry.correct }}</td>
             </tr>
