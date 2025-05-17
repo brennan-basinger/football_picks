@@ -98,6 +98,6 @@ def view_picks(request, user_id):
 
 
 
-
-
+def terms_view(request):
+    return render(request, 'picks/terms.html')
 

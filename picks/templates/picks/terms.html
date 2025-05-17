@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+
+{% block title %}Terms and Conditions{% endblock %}
+
+{% block content %}
+<style>
+  /* Ensure the page background is a light gray */
+  body {
+    background-color: #f8f9fa !important;
+  }
+</style>
+
+<div class="container my-5">
+  <div class="bg-white p-5 rounded shadow-sm" style="max-width: 900px; margin: auto;">
+
+    <h1 class="display-4 mb-4">SEC Football Pick'em Contest — Terms and Conditions</h1>
+    <p class="text-muted"><strong>Effective Date:</strong> {{ effective_date|default:"May 7, 2025" }}</p>
+    <hr>
+
+    <h2 class="mt-5">1. Contest Overview</h2>
+    <p>
+      This is a private, invitation-only contest where participants predict the winner of each Southeastern Conference (SEC) NCAA football game during the regular season.
+      The Contest is conducted for entertainment purposes only and is not affiliated with or endorsed by the NCAA or SEC.
+    </p>
+
+    <h2 class="mt-4">2. Eligibility</h2>
+    <ul>
+      <li>Must be 18 years or older to participate.</li>
+      <li>Must be directly invited by the Contest Organizer or approved after being referred by an existing participant.</li>
+      <li>The Organizer reserves the right to approve or deny any entry at their sole discretion.</li>
+      <li>Contest is private and not open to the general public.</li>
+    </ul>
+
+    <h2 class="mt-4">3. Entry Fee & Prize Distribution</h2>
+    <ul>
+      <li>A $20 entry fee is required to participate.</li>
+      <li>All entry fees must be submitted before the first game of the season.</li>
+      <li>The entire prize pool is distributed as follows:
+        <ul>
+          <li><strong>1st Place:</strong> 50% of the pot</li>
+          <li><strong>2nd Place:</strong> 30%</li>
+          <li><strong>3rd Place:</strong> 20%</li>
+        </ul>
+      </li>
+      <li>No portion of the pot is retained by the Organizer.</li>
+    </ul>
+
+    <h2 class="mt-4">4. Submission of Picks</h2>
+    <ul>
+      <li>Picks must be submitted before the official contest start date — August 30, 2025.</li>
+      <li>Picks are locked after kickoff and cannot be changed.</li>
+      <li>Missed picks receive 0 points.</li>
+      <li>All picks must be submitted through the official website interface.</li>
+    </ul>
+
+    <h2 class="mt-4">5. Scoring and Tie-Breakers</h2>
+    <ul>
+      <li>Participants receive 1 point for each correct pick.</li>
+      <li>Standings are based on the total number of correct picks across the season.</li>
+      <li>Tie-breakers are applied in this order:
+        <ol>
+          <li>Total correct picks in the final week</li>
+          <li>Even split of prize in case of persistent tie</li>
+        </ol>
+      </li>
+    </ul>
+
+    <h2 class="mt-4">6. Disclaimers</h2>
+    <p>
+      This is a game of skill. There are no random elements that influence the outcome.
+      The Organizer does not claim endorsement from any sports organization. This contest is run privately and independently.
+    </p>
+
+    <h2 class="mt-4">7. Limitation of Liability</h2>
+    <p>
+      By participating, you agree to hold harmless the Organizer from any liability related to participation, including technical issues, scoring errors, or disputes.
+    </p>
+
+    <h2 class="mt-4">8. Changes and Cancellation</h2>
+    <p>
+      The Organizer reserves the right to modify or cancel the Contest if unforeseen circumstances arise, including but not limited to season cancellation, site failure, or force majeure. Refunds may be issued at Organizer discretion.
+    </p>
+
+    <h2 class="mt-4">9. Promotion Disclaimer</h2>
+    <p>
+      The Organizer does not publicly promote this contest. Any public posts or mentions made by participants are not official communications from the Organizer.
+    </p>
+
+    <h2 class="mt-4">10. Privacy</h2>
+    <p>
+      Personal data (e.g., name, email, picks) is collected solely for contest participation and will not be shared, sold, or used for marketing.
+    </p>
+
+    <h2 class="mt-4">11. Contact</h2>
+    <p>
+      For any questions or disputes regarding this contest, please contact the Organizer directly at
+      <a href="mailto:brennan.d.basinger@gmail.com">brennan.d.basinger@gmail.com</a>.
+    </p>
+
+    <p class="mt-5 text-muted" style="font-size: 0.875rem;">
+      By participating in the contest, you agree to abide by these Terms and Conditions in full.
+    </p>
+  </div>
+</div>
+{% endblock %}
