@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- Header as a boxed card -->
+<div class="py-5">
+  <div class="container bg-primary text-white p-5 rounded shadow-sm">
+    <h1 class="display-4">About the SEC Football Contest</h1>
+    <p class="lead">Predict every SEC game and compete for cash prizes!</p>
+  </div>
+</div>
+
+<div class="container my-5">
+
+  <!-- Overview -->
+  <div class="row mb-4">
+    <div class="col-lg-8 offset-lg-2">
+      <div class="bg-white p-4 rounded shadow-sm">
+        <h2>How It Works</h2>
+        <p>
+          Every contest entrant registers, then makes a pick (Win or Loss)
+          for each Southeastern Conference game of the 2025 season.
+          Your bracket locks automatically when the first kickoff happens.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Key Rules & Bracket Changes (already in cards) -->
+  <div class="row gx-4 gy-4 mb-5">
+    <div class="col-md-6">
+      <div class="card h-100 shadow-sm">
+        <div class="card-header bg-secondary text-white">
+          <h5 class="mb-0">Key Rules</h5>
+        </div>
+        <div class="card-body">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">$20 buy-in per entrant</li>
+            <li class="list-group-item">1st place wins 50% of the pot</li>
+            <li class="list-group-item">2nd place wins 30% of the pot</li>
+            <li class="list-group-item">3rd place wins 20% of the pot</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card h-100 shadow-sm">
+        <div class="card-header bg-secondary text-white">
+          <h5 class="mb-0">Bracket Changes</h5>
+        </div>
+        <div class="card-body">
+          <p>Entrants may revise their picks up until the start of the first SEC game.</p>
+          <p>Once kickoff happens, all brackets lock and picks become visible to everyone.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Important Dates with white background -->
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+      <div class="bg-white p-4 rounded shadow-sm">
+        <h2>Important Dates</h2>
+        <ul class="list-group">
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Registration &amp; Pick Submission Opens
+            <span class="badge bg-primary rounded-pill">Now</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Pick Submission Closes
+            <span class="badge bg-danger rounded-pill">Sat, Aug 30, 2025</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Contest End
+            <span class="badge bg-success rounded-pill">Nov 29, 2025</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div>
+{% endblock %}

@@ -10,6 +10,8 @@ from django.shortcuts import render
 def schedule_view(request):
     return render(request, 'picks/schedule.html')
 
+def about(request):
+    return render(request, 'picks/about.html')
 
 def landing(request):
     return render(request, 'picks/landing.html')
