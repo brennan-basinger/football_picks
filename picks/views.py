@@ -88,11 +88,10 @@ def leaderboard(request):
 def view_picks(request, user_id):
     other_user = get_object_or_404(User, id=user_id)
     # Deny access to others’ picks until the contest starts
-
     if request.user.id != other_user.id and timezone.now() < settings.CONTEST_START:
         return HttpResponseForbidden("Picks remain private until the contest begins.")
-        picks = Pick.objects.filter(user=other_user)
-        return render(request, 'picks/view_picks.html', {
+    picks = Pick.objects.filter(user=other_user)
+    return render(request, 'picks/view_picks.html', {
             'other_user': other_user,
             'picks': picks
         })

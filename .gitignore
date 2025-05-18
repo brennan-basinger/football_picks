@@ -26,6 +26,10 @@ share/python-wheels/
 .installed.cfg
 *.egg
 
+# PyCharm / IntelliJ IDEA
+*.iml
+.idea/
+
 .DS_Store
 
 users_to_import.csv
