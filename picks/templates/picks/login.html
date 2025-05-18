@@ -1,17 +1,25 @@
-<!-- picks/templates/picks/login.html -->
 {% extends "base.html" %}
 {% block content %}
-  <div class="row justify-content-center">
-    <div class="col-md-6">
-      <h2 class="mb-4">Login</h2>
-      <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-primary">Login</button>
-      </form>
-        <div class="mt-3">
-        <a href="{% url 'password_reset' %}">Forgot Password?</a>
+<div class="d-flex justify-content-center align-items-center" style="min-height:60vh;">
+  <div class="w-100 w-md-50 auth-card p-4">
+    <h2 class="text-center mb-4">Login</h2>
+    <form method="post" novalidate>
+      {% csrf_token %}
+      <div class="mb-3">
+        <label for="id_username" class="form-label">Email</label>
+        <input type="email" name="username" id="id_username"
+               class="form-control" required autofocus>
       </div>
+      <div class="mb-3">
+        <label for="id_password" class="form-label">Password</label>
+        <input type="password" name="password" id="id_password"
+               class="form-control" required>
+      </div>
+      <button type="submit" class="btn btn-primary w-100">Login</button>
+    </form>
+    <div class="text-center mt-3">
+      <a href="{% url 'password_reset' %}">Forgot Password?</a>
     </div>
   </div>
+</div>
 {% endblock %}

@@ -40,7 +40,10 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "picks",
+    "crispy_forms",
 ]
+
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 # When picks become public (UTC)
 CONTEST_START = datetime(2025, 8, 30, 19, 0, tzinfo=pytz.UTC)
