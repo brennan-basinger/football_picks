@@ -16,6 +16,8 @@ def about(request):
     return render(request, 'picks/about.html')
 
 def landing(request):
+    if request.user.is_authenticated:
+        return redirect('picks:home')
     return render(request, 'picks/landing.html')
 
 def register(request):
