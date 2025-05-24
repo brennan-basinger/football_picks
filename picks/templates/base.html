@@ -23,6 +23,7 @@
 </head>
 <body class="d-flex flex-column min-vh-100">
 
+
   <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container">
@@ -32,14 +33,16 @@
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="{% url 'landing' %}">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="{% url 'schedule' %}">Schedule</a></li>
+
           {% if user.is_authenticated %}
-            <li class="nav-item"><a class="nav-link" href="{% url 'picks:home' %}">Make Picks</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'picks:home' %}">My Bracket </a></li>
             <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
           {% else %}
             <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
             <li class="nav-item"><a class="nav-link" href="{% url 'picks:register' %}">Register</a></li>
           {% endif %}
           <li class="nav-item"><a class="nav-link" href="{% url 'picks:leaderboard' %}">Leaderboard</a></li>
+            <li class="nav-item"> <a class="nav-link" href="{% url 'picks:about' %}">About</a> </li>
         </ul>
       </div>
     </div>
@@ -56,6 +59,8 @@
   <footer class="bg-dark text-white py-3 mt-auto">
     <div class="container text-center">
       &copy; 2025 SEC Football Contest
+        &nbsp;|&nbsp;
+        <a href="{% url 'picks:terms' %}" class="text-light">Terms &amp; Conditions</a>
     </div>
   </footer>
 
