@@ -24,29 +24,39 @@
 <body class="d-flex flex-column min-vh-100">
 
 
-  <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <div class="container">
-      <a class="navbar-brand" href="{% url 'landing' %}">SEC Football Contest 2025</a>
-      <button class="navbar-toggler" …></button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="{% url 'landing' %}">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="{% url 'schedule' %}">Schedule</a></li>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container">
+    <a class="navbar-brand" href="{% url 'landing' %}">SEC Football Contest 2025</a>
 
-          {% if user.is_authenticated %}
-            <li class="nav-item"><a class="nav-link" href="{% url 'picks:home' %}">My Bracket </a></li>
-            <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
-          {% else %}
-            <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
-            <li class="nav-item"><a class="nav-link" href="{% url 'picks:register' %}">Register</a></li>
-          {% endif %}
-          <li class="nav-item"><a class="nav-link" href="{% url 'picks:leaderboard' %}">Leaderboard</a></li>
-            <li class="nav-item"> <a class="nav-link" href="{% url 'picks:about' %}">About</a> </li>
-        </ul>
-      </div>
+    <!-- Proper toggler for mobile -->
+    <button class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="{% url 'landing' %}">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'schedule' %}">Schedule</a></li>
+        {% if user.is_authenticated %}
+          <li class="nav-item"><a class="nav-link" href="{% url 'picks:home' %}">My Bracket</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
+        {% else %}
+          <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'picks:register' %}">Register</a></li>
+        {% endif %}
+        <li class="nav-item"><a class="nav-link" href="{% url 'picks:leaderboard' %}">Leaderboard</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'picks:about' %}">About</a></li>
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>
+
 
   <!-- MAIN CONTENT (grows to push footer down) -->
   <main class="flex-grow-1">
